@@ -38,23 +38,23 @@ variable "availability_zones" {
 
 variable "cidr" {
   description = "The CIDR block for the VPC."
-  default     = "10.0.0.0/16"
+  default     = "172.31.0.0/16"
 }
 
 variable "vpc_id" {
   description = "VPC ID for ecs services"
-  default     = "vpc-0449253d87caabbd9"
+  default     = "vpc-00e0634c2cec9b145"
 }
 
 variable "public_subnets" {
   description = "a list of CIDRs for public subnets in your VPC, must be set if the cidr variable is defined, needs to have as many elements as there are availability zones"
-  default     = ["10.0.0.0/24", "10.0.0.1/24", "10.0.0.2/24"]
+  default     = ["172.31.80.0/20","172.31.16.0/20","172.31.32.0/20"]
 }
 
 variable "public_subnets_ids" {
   type        = list(any)
   description = "a list of CIDRs for public subnets in your VPC, must be set if the cidr variable is defined, needs to have as many elements as there are availability zones"
-  default     = ["subnet-09b8c03db0490f592", "subnet-088ef7379faf11995", "subnet-063b1efcc5f6ecbe6"]
+  default     = ["subnet-070faab78ed2718be", "subnet-0899eed80f1a25c5a", "subnet-02d6fa51a8006dcdf"]
 }
 
 variable "service_desired_count" {
@@ -64,7 +64,7 @@ variable "service_desired_count" {
 
 variable "container_port" {
   description = "The port where the Docker is exposed"
-  default     = 4000
+  default     = 80
 }
 
 variable "container_cpu" {
@@ -78,9 +78,9 @@ variable "container_memory" {
 }
 
 variable "container_image" {
-  default = "330753592456.dkr.ecr.us-east-1.amazonaws.com/demo-app"
+  default = "014958301348.dkr.ecr.us-east-1.amazonaws.com/demo-app"
 }
 
 variable "ecs_cluster" {
-  default = "demo-app-1"
+  default = "demo-app-demo"
 }

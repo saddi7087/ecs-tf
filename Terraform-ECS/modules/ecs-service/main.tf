@@ -31,10 +31,10 @@ resource "aws_ecs_task_definition" "main_td" {
   family                   = "${var.name}-taskdefinition-${var.environment}"
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
-  cpu                      = 200
+  cpu                      = 256
   memory                   = 512
-  execution_role_arn       = "arn:aws:iam::330753592456:role/ecsTaskExecutionRole-dev"
-  task_role_arn            = "arn:aws:iam::330753592456:role/ecsTaskExecutionRole-dev"
+  execution_role_arn       = "arn:aws:iam::014958301348:role/ecsTaskExecutionRole-dev"
+  task_role_arn            = "arn:aws:iam::014958301348:role/ecsTaskExecutionRole-dev"
   container_definitions = jsonencode([{
     name      = "${var.name}-container-${var.environment}"
     image     = "${var.container_image}:latest"
