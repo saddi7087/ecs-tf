@@ -78,7 +78,7 @@ variable "container_memory" {
 }
 
 variable "container_image" {
-  default = "014958301348.dkr.ecr.us-east-1.amazonaws.com/demo-app"
+  default = "014958301348.dkr.ecr.us-east-1.amazonaws.com/demo-app-1"
 }
 
 variable "ecs_cluster" {

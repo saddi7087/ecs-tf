@@ -33,8 +33,8 @@ resource "aws_ecs_task_definition" "main_td" {
   requires_compatibilities = ["FARGATE"]
   cpu                      = 256
   memory                   = 512
-  execution_role_arn       = "arn:aws:iam::014958301348:role/ecsTaskExecutionRole-dev"
-  task_role_arn            = "arn:aws:iam::014958301348:role/ecsTaskExecutionRole-dev"
+  execution_role_arn       = "arn:aws:iam::014958301348:role/ecsTaskExecutionRole-demo"
+  task_role_arn            = "arn:aws:iam::014958301348:role/ecsTaskExecutionRole-demo"
   container_definitions = jsonencode([{
     name      = "${var.name}-container-${var.environment}"
     image     = "${var.container_image}:latest"
