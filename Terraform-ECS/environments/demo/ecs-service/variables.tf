@@ -69,7 +69,7 @@ variable "container_port" {
 
 variable "container_cpu" {
   description = "The number of cpu units(mi) used by the task"
-  default     = 200
+  default     = 256
 }
 
 variable "container_memory" {
